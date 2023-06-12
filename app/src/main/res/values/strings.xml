@@ -5,4 +5,10 @@
     <string name="sharebutton">ShareButton</string>
     <string name="copy_button">Copy Button</string>
     <string name="hearticon">HeartIcon</string>
+    <string name="lowercase">Lowercase</string>
+    <string name="uppercase">Uppercase</string>
+    <string name="digits">Digits</string>
+    <string name="special_characters">Special Characters</string>
+    <string name="generate">Generate</string>
+    <string name="password_mask">********</string>
 </resources>

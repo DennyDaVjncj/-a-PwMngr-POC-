@@ -16,14 +16,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/password"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:layout_margin="20dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/password"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_margin="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/password_mask"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_margin="20dp"
+                android:layout_gravity="center"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,50 +50,96 @@
                 android:layout_height="0dp"
                 android:layout_weight="1" />
 
-            <ImageView
-                android:layout_width="45dp"
-                android:layout_height="36dp"
+            <ImageButton
+                android:id="@+id/favoriteImageButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_gravity="bottom"
-                android:padding="7dp"
-                android:src="@drawable/heart_icon"
-                android:contentDescription="@string/hearticon" />
+                android:backgroundTint="#FFFFFF"
+                android:contentDescription="@string/hearticon"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/heart_icon" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/baseline_share_24"
-                android:paddingBottom="7dp"
+            <ImageButton
+                android:id="@+id/shareImageButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_gravity="bottom"
-                android:contentDescription="@string/sharebutton" />
+                android:backgroundTint="#FFFFFF"
+                android:contentDescription="@string/sharebutton"
+                app:srcCompat="@drawable/baseline_share_24" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/baseline_file_copy_24"
-                android:padding="7dp"
+            <ImageButton
+                android:id="@+id/copyImageButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_gravity="bottom"
-                android:contentDescription="@string/copy_button" />
+                android:backgroundTint="#FFFFFF"
+                android:contentDescription="@string/copy_button"
+                android:src="@drawable/baseline_file_copy_24" />
+
+        </LinearLayout>
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/password_length"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"/>
-
-    <SeekBar
-        android:id="@+id/seekBar"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"/>
+        android:layout_marginEnd="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/password_length"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"/>
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <CheckBox
+            android:id="@+id/lowercase_checkBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lowercase"
+            android:layout_marginTop="20dp"/>
+
+        <CheckBox
+            android:id="@+id/uppercase_checkBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/uppercase" />
+
+        <CheckBox
+            android:id="@+id/digit_checkBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/digits" />
+
+        <CheckBox
+            android:id="@+id/specialCharacters_checkBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/special_characters" />
+
+        <Button
+            android:id="@+id/generate_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/generate"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="130dp"/>
+
+    </LinearLayout>
 
 
 </LinearLayout>
